@@ -1,0 +1,8 @@
+- name: Command and Delegate to
+  ansible.builtin.command: 
+    cmd: uname -n
+
+- name: Command and Delegate to
+  ansible.builtin.command: 
+    cmd: uname -n
+  delegate_to: "{{ remote_server }}"
