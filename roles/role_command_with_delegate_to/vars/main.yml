@@ -6,4 +6,4 @@ password: !vault |
       3561646633333762630a386430643962346632316438653063346565303763623335353465373364
       3666
 
-remote_server: 
+delegation_action: "{{ remote_server }}"
