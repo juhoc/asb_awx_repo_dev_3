@@ -1,0 +1,7 @@
+- name: Playbook - Command and Register
+  hosts: all
+  gather_facts: true
+  
+  tasks:
+    - include_role:
+        name: role_command_with_ignore_errors

@@ -1,0 +1,6 @@
+- name: Command with Ignore_errors
+  ansible.builtin.command: 
+    cmd: cat /etc/hosts2
+  ignore_errors: true
+  debug:
+    msg: "{{ salida_cat.stderr }}"
