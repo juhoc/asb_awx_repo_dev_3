@@ -2,5 +2,6 @@
   ansible.builtin.command: 
     cmd: cat /etc/hosts2
   ignore_errors: true
-  debug:
+
+- debug:
     msg: "{{ salida_cat.stderr }}"
