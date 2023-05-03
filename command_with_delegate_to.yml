@@ -1,5 +1,5 @@
 - name: Playbook - Command and Register
-  hosts: localhost
+  hosts: all
   gather_facts: true
   
   tasks:
