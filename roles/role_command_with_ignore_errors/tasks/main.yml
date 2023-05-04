@@ -4,10 +4,10 @@
   register: salida_cat
   ignore_errors: true
 
-- debug:
+- ansible.builtin.debug:
     msg: "Contenido del archivo: {{ salida_cat.stdout_lines }}"
   when: salida_cat is succeeded
 
-- debug:
+- ansible.builtin.debug:
     msg: "Error comando: {{ salida_cat.stderr }}"
   when: salida_cat is failed
