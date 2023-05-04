@@ -5,7 +5,7 @@
   ignore_errors: true
 
 - debug:
-    msg: "Contenido del archivo: {{ salida_cat.stdout }}"
+    msg: "Contenido del archivo: {{ salida_cat.stdout_lines }}"
   when: salida_cat is succeeded
 
 - debug:
