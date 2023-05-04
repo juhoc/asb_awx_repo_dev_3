@@ -1,7 +1,13 @@
 - name: Command with Ignore_errors
   ansible.builtin.command: 
-    cmd: cat /etc/hosts2
+    cmd: cat {{ archivo }}
+  register: salida_cat
   ignore_errors: true
 
 - debug:
-    msg: "{{ salida_cat.stderr }}"
+    msg: "Contenido del archivo: {{ salida_cat.stdout }}"
+  when: not salida_cat|failed
+
+- debug:
+    msg: "Error comando: {{ salida_cat.stderr }}"
+  when: dalida_cat|failde

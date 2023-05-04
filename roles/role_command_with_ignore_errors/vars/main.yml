@@ -7,3 +7,4 @@ password: !vault |
       3666
 
 delegate_server: "{{ remote_server }}"
+ignore_anyerror: "{{ archivo }}"
