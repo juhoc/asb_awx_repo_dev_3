@@ -6,8 +6,8 @@
 
 - debug:
     msg: "Contenido del archivo: {{ salida_cat.stdout }}"
-  when: not salida_cat|failed
+  when: salida_cat is succeeded
 
 - debug:
     msg: "Error comando: {{ salida_cat.stderr }}"
-  when: salida_cat|failed
+  when: salida_cat is failed
