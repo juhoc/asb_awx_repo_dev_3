@@ -10,4 +10,4 @@
 
 - debug:
     msg: "Error comando: {{ salida_cat.stderr }}"
-  when: dalida_cat|failde
+  when: salida_cat|failed
