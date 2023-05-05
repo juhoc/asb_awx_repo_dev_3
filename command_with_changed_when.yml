@@ -5,3 +5,4 @@
   tasks:
     - include_role:
         name: role_command_with_changed_when
+        
