@@ -1,5 +1,5 @@
 - name: Command with Failed_when
   ansible.builtin.command: 
-    cmd: dig +short "{{ remote_server }}"
+    cmd: dig +short {{ remote_server }}
   register: salida_dig
   failed_when: salida_dig.stdout == ""
