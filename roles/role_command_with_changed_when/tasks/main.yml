@@ -8,6 +8,5 @@
 - name: Command with Changed When
   ansible.builtin.command: 
     cmd: apt get -y "{{ pkg_name }}"
-    state: present
   register: salida_apt
   changed_when: "'is already the newest version' not in salida_apt.stdout"
