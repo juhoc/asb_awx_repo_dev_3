@@ -1,0 +1,13 @@
+- name: Command with Ignore_errors
+  ansible.builtin.command: 
+    cmd: cat {{ archivo }}
+  register: salida_cat
+  ignore_errors: true
+
+- ansible.builtin.debug:
+    msg: "Contenido del archivo: {{ salida_cat.stdout_lines }}"
+  when: salida_cat is succeeded
+
+- ansible.builtin.debug:
+    msg: "Error comando: {{ salida_cat.stderr }}"
+  when: salida_cat is failed

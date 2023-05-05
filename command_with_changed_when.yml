@@ -1,0 +1,7 @@
+- name: Playbook - Command and Changed When
+  hosts: all
+  gather_facts: true
+  
+  tasks:
+    - include_role:
+        name: role_command_with_changed_when

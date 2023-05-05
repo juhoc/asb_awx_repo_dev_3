@@ -1,0 +1,7 @@
+- name: Playbook - Command and Failed When
+  hosts: all
+  gather_facts: true
+  
+  tasks:
+    - include_role:
+        name: role_command_with_failed_when
