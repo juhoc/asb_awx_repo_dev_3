@@ -12,8 +12,8 @@
     - name: Start service bar and aneble
       become: true
       ansible.builtin.service:
-      name: bar
-      state: started
-      anebled: true
+        name: bar
+        state: started
+        anebled: true
   when: ansible_facts['distribution'] == AlmaLinux or ansible_facts['distribution'] == Rocky
   ignore_error: true
