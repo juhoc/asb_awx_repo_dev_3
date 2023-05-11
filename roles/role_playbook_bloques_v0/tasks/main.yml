@@ -11,7 +11,7 @@
 
    - name: The service bar start and aneble
      become: yes
-     ansible.builtin.service:
+     ansible.builtin.systemd:
        name: bar
        state: started
        anebled: true
