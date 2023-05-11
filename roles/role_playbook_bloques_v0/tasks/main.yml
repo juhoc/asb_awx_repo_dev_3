@@ -2,15 +2,15 @@
 - name: Blocks and tasks
   block:
     - name: Install httpd and memcached
-      become: true
+      become: yes
       ansible.builtin.yum:
         name:
         - httpd
         - memcached
         state: present
 
-    - name: Start service bar and aneble
-      become: true
+    - name: Started service bar and aneble
+      become: yes
       ansible.builtin.service:
         name: bar
         state: started
