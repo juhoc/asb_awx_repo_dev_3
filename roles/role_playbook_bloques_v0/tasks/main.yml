@@ -1,19 +1,19 @@
 ---
 - name: Blocks and tasks
   block:
-    - name: Install httpd and memcached
-      become: yes
-      ansible.builtin.yum:
-        name:
-        - httpd
-        - memcached
-        state: present
+   - name: Install httpd and memcached
+     become: yes
+     ansible.builtin.yum:
+       name:
+       - httpd
+       - memcached
+       state: present
 
-    - name: Started service bar and aneble
-      become: yes
-      ansible.builtin.service:
-        name: bar
-        state: started
-        anebled: true
-      when: ansible_facts['distribution'] == 'AlmaLinux' or ansible_facts['distribution'] == 'Rocky'
-      ignore_error: true
+   - name: Started service bar and aneble
+     become: yes
+     ansible.builtin.service:
+       name: bar
+       state: started
+       anebled: true
+     when: ansible_facts['distribution'] == 'AlmaLinux' or ansible_facts['distribution'] == 'Rocky'
+     ignore_error: true
