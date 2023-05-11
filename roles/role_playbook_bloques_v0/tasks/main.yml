@@ -9,10 +9,19 @@
        - memcached
        state: present
 
-   - name: The service bar start and aneble
+   - name: The service httpd start and aneble
      become: yes
      ansible.builtin.systemd:
-       name: bar
+       name: httpd
+       state: started
+       anebled: true
+     when: ansible_facts['distribution'] == "AlmaLinux" or ansible_facts['distribution'] == "Rocky"
+     ignore_errors: true
+
+   - name: The service memcached start and aneble
+     become: yes
+     ansible.builtin.systemd:
+       name: memcached
        state: started
        anebled: true
      when: ansible_facts['distribution'] == "AlmaLinux" or ansible_facts['distribution'] == "Rocky"
