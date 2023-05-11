@@ -9,7 +9,7 @@
        - memcached
        state: present
 
-   - name: Started service bar and aneble
+   - name: The service bar start and aneble
      become: yes
      ansible.builtin.service:
        name: bar
