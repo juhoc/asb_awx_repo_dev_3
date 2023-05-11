@@ -3,7 +3,7 @@
   block:
    - name: Install httpd and memcached
      become: yes
-     ansible.builtin.yum:
+     ansible.builtin.dnf:
        name:
        - httpd
        - memcached
