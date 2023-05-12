@@ -11,18 +11,18 @@
 
    - name: The service httpd start and aneble
      become: yes
-     service:
+     ansible.builtin.service:
        name: httpd
-       state: stopped
+       state: started
        #anebled: true
      when: ansible_facts['distribution'] == "AlmaLinux"
      ignore_errors: true
 
    - name: The service memcached start and aneble
      become: yes
-     service:
+     ansible.builtin.service:
        name: memcached
-       state: stopped
+       state: started
        #anebled: true
      when: ansible_facts['distribution'] == "AlmaLinux"
      ignore_errors: true
