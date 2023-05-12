@@ -11,18 +11,18 @@
 
    - name: The service httpd start and aneble
      become: yes
-     ansible.builtin.systemd:
+     systemd:
        name: httpd
-       state: started
+       state: stopped
        anebled: true
      when: ansible_facts['distribution'] == "AlmaLinux" or ansible_facts['distribution'] == "Rocky"
      ignore_errors: true
 
    - name: The service memcached start and aneble
      become: yes
-     ansible.builtin.systemd:
+     systemd:
        name: memcached
-       state: started
+       state: stopped
        anebled: true
      when: ansible_facts['distribution'] == "AlmaLinux" or ansible_facts['distribution'] == "Rocky"
      ignore_errors: true
