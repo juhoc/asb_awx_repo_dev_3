@@ -11,7 +11,7 @@
 
    - name: The service httpd start and aneble
      become: yes
-     systemd:
+     service:
        name: httpd
        state: stopped
        anebled: true
@@ -20,7 +20,7 @@
 
    - name: The service memcached start and aneble
      become: yes
-     systemd:
+     service:
        name: memcached
        state: stopped
        anebled: true
