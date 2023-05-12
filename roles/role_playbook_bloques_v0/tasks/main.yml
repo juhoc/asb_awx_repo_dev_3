@@ -14,8 +14,8 @@
      service:
        name: httpd
        state: stopped
-       anebled: true
-     when: ansible_facts['distribution'] == "AlmaLinux" or ansible_facts['distribution'] == "Rocky"
+       #anebled: true
+     when: ansible_facts['distribution'] == "AlmaLinux"
      ignore_errors: true
 
    - name: The service memcached start and aneble
@@ -23,6 +23,6 @@
      service:
        name: memcached
        state: stopped
-       anebled: true
-     when: ansible_facts['distribution'] == "AlmaLinux" or ansible_facts['distribution'] == "Rocky"
+       #anebled: true
+     when: ansible_facts['distribution'] == "AlmaLinux"
      ignore_errors: true
