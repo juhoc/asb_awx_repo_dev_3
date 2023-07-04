@@ -3,7 +3,7 @@
   block:
    - name: Install Apache2 on Debian or Ubuntu
      become: yes
-     ansible.builtin.apt:
+     apt:
        name:
        - apache2
        state: latest
@@ -13,7 +13,7 @@
 
    - name: Install HTTP and memcached
      become: yes
-     ansible.builtin.dnf:
+     yum:
        name:
        - httpd
        state: latest
