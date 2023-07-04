@@ -4,9 +4,11 @@
   service: 
     name: apache2
     state: restarted
+  when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
 
 - name:  Restar Service Web AlmaLinux-RockyLinux
   become: true
   service: 
     name: httpd
     state: restarted
+  when: ansible_distribution == "AlmaLinux" or ansible_distribution == "Rocky"
