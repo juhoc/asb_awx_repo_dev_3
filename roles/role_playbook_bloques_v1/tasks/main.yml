@@ -1,0 +1,21 @@
+---
+- name: Blocks and tasks
+  block:
+   - name: Install Apache2 on Debian or Ubuntu
+     become: yes
+     dnf:
+       name:
+       - apache2
+       state: latest
+     notify: Restar Service Web Debian_Ubuntu
+     when: ansible_os_family == "AlmaLinux" or ansible_os_family == "Rocky"
+
+
+   - name: Install HTTP and memcached
+     become: yes
+     dnf:
+       name:
+       - httpd
+       state: latest
+     notify: Restar Service Web AlmaLinux_RockyLinux
+     when: ansible_os_family == "AlmaLinux" or ansible_os_family == "Rocky"

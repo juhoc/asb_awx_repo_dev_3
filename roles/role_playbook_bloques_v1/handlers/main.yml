@@ -1,0 +1,12 @@
+---
+- name:  Restar Service Web Debian_Ubuntu
+  become: true
+  service: 
+    name: apache2
+    state: restarted
+
+- name:  Restar Service Web AlmaLinux-RockyLinux
+  become: true
+  service: 
+    name: httpd
+    state: restarted
