@@ -13,7 +13,7 @@
 
    - name: Install HTTP and memcached
      become: yes
-     dnf:
+     yum:
        name:
        - httpd
        state: latest
