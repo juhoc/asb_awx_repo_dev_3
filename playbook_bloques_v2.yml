@@ -1,0 +1,7 @@
+- name: Playbook - Blocks
+  hosts: all
+  gather_facts: true
+  
+  tasks:
+    - include_role:
+        name: role_playbook_bloques_v2
