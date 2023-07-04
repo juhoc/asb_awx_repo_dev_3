@@ -1,12 +1,12 @@
 ---
-- name:  Restar Service Web Debian_Ubuntu
+- name:  Restar Service Web Linux Based on Debian
   become: true
   service: 
     name: apache2
     state: restarted
   when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
 
-- name:  Restar Service Web AlmaLinux_RockyLinux
+- name:  Restar Service Web Linux Based on Red Hat
   become: true
   service: 
     name: httpd

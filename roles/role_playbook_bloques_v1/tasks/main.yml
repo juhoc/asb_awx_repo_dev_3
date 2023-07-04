@@ -1,21 +1,21 @@
 ---
 - name: Blocks and tasks
   block:
-   - name: Install Apache2 on Debian or Ubuntu
+   - name: Install Apache2 Linux Based on Debian
      become: yes
      apt:
        name:
        - apache2
        state: latest
-     notify: Restar Service Web Debian_Ubuntu
+     notify: Restar Service Web Linux Based on Debian
      when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
 
 
-   - name: Install HTTP and memcached
+   - name: Install HTTP Linux Based on Red Hat
      become: yes
      yum:
        name:
        - httpd
        state: latest
-     notify: Restar Service Web AlmaLinux_RockyLinux
+     notify: Restar Service Web Linux Based on Red Hat
      when: ansible_distribution == "AlmaLinux" or ansible_distribution == "Rocky"
