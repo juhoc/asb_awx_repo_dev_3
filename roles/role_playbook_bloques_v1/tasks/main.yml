@@ -3,19 +3,19 @@
   block:
    - name: Install Apache2 on Debian or Ubuntu
      become: yes
-     dnf:
+     ansible.builtin.apt:
        name:
        - apache2
        state: latest
      notify: Restar Service Web Debian_Ubuntu
-     when: ansible_os_family == "AlmaLinux" or ansible_os_family == "Rocky"
+     when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
 
 
    - name: Install HTTP and memcached
      become: yes
-     dnf:
+     ansible.builtin.dnf:
        name:
        - httpd
        state: latest
      notify: Restar Service Web AlmaLinux_RockyLinux
-     when: ansible_os_family == "AlmaLinux" or ansible_os_family == "Rocky"
+     when: ansible_distribution == "AlmaLinux" or ansible_distribution == "Rocky"
