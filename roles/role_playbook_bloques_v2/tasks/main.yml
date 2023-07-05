@@ -9,22 +9,12 @@
    - name: No exist command lsb_release
      command: cat /etc/issue
      register: version
-     when: ansible_distribution == "Debian"
-
-   - name: No exist command lsb_release
-     command: cat /etc/issue
-     register: version
-     when: ansible_distribution == "Ubuntu"
+     when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
 
    - name: No exist command lsb_release
      command: cat /etc/redhat-release
      register: version
-     when: ansible_distribution == "AlmaLinux"
-
-   - name: No exist command lsb_release
-     command: cat /etc/redhat-release
-     register: version
-     when: ansible_distribution == "Rocky"
+     when: ansible_distribution == "AlmaLinux" or ansible_distribution == "Rocky"
 
   always:
    - name: See the version
