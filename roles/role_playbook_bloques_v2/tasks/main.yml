@@ -23,7 +23,7 @@
 
    - name: No exist command lsb_release
      command: cat /etc/redhat-release
-     register: version4
+     register: version
      when: ansible_distribution == "Rocky"
 
   always:
