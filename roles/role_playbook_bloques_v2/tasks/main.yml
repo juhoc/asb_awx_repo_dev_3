@@ -7,11 +7,11 @@
      register: version
   rescue:
    - name: No exist command lsb_release
-     command: cat /etc/*release | egrep "^NAME|^VERSION=" | tr -d "\n\"" | grep . | sed "s/NAME=//g; s/VERSION=/ /g"
+     command: cat /etc/*release | egrep "^NAME|^VERSION=" | tr -d "'{{ backslash }}'n'{{ backslash }}'"" | grep . | sed "s/NAME=//g; s/VERSION=/ /g"
      register: version
      when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
    - name: No exist command lsb_release
-     command: cat /etc/*release | egrep "^NAME|^VERSION=" | tr -d "\n\"" | grep . | sed "s/NAME=//g; s/VERSION=/ /g"
+     command: cat /etc/*release | egrep "^NAME|^VERSION=" | tr -d "'{{ backslash }}'n'{{ backslash }}'"" | grep . | sed "s/NAME=//g; s/VERSION=/ /g"
      register: version
      when: ansible_distribution == "AlmaLinux" or ansible_distribution == "Rocky"
   always:
