@@ -5,6 +5,7 @@
      become: yes
      command: lsb_release -d
      register: version
+
   rescue:
    - name: No exist command lsb_release
      command: cat /etc/issue
