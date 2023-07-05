@@ -3,15 +3,15 @@
   block:
    - name: Read the configuration of lsb_release 
      become: yes
-     command: lsb_release -a
+     command: lsb_release -d
      register: version
   rescue:
    - name: No exist command lsb_release
-     command: cat /etc/*release | egrep "^NAME|^VERSION=" | cut -d = -f2
+     command: cat /etc/issue
      register: version
      when: ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"
    - name: No exist command lsb_release
-     command: cat /etc/*release | egrep "^NAME|^VERSION=" | cut -d = -f2
+     command: cat /etc/redhat-release
      register: version
      when: ansible_distribution == "AlmaLinux" or ansible_distribution == "Rocky"
   always:
