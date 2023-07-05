@@ -3,7 +3,7 @@
   block:
    - name: Read the configuration of lsb_release 
      become: yes
-     command: lsb_release -b
+     command: lsb_release -a
      register: version
   rescue:
    - name: No exist command lsb_release
