@@ -21,7 +21,7 @@
      register: version
      when: ansible_distribution == "AlmaLinux"
 
-     - name: No exist command lsb_release
+   - name: No exist command lsb_release
      command: cat /etc/redhat-release
      register: version
      when: ansible_distribution == "Rocky"
