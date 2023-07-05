@@ -4,29 +4,34 @@
    - name: Read the configuration of lsb_release 
      become: yes
      command: lsb_release -d
-     register: version
+     register: version0
   rescue:
    - name: No exist command lsb_release
      command: cat /etc/issue
-     register: version
+     register: version1
      when: ansible_distribution == "Debian"
 
    - name: No exist command lsb_release
      command: cat /etc/issue
-     register: version
+     register: version2
      when: ansible_distribution == "Ubuntu"
 
    - name: No exist command lsb_release
      command: cat /etc/redhat-release
-     register: version
+     register: version3
      when: ansible_distribution == "AlmaLinux"
 
    - name: No exist command lsb_release
      command: cat /etc/redhat-release
-     register: version
+     register: version4
      when: ansible_distribution == "Rocky"
 
   always:
    - name: See the version
      debug:
-       msg: "{{ version.stdout }}"
+       msg: 
+        - "{{ version0.stdout }}"
+        - "{{ version1.stdout }}"
+        - "{{ version2.stdout }}"
+        - "{{ version3.stdout }}"
+        - "{{ version4.stdout }}"
